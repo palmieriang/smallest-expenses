@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styled from "styled-components";
+import { Table, TableHead, TableTr, TableTh, TableTd } from "./style";
 
 const TransactionsList = ({ transactions }) => {
   const transaction = transactions.map(
@@ -11,7 +11,7 @@ const TransactionsList = ({ transactions }) => {
           {amount.value}
         </TableTd>
         <TableTd>{category_title}</TableTd>
-        <TableTd>{description}</TableTd>
+        <TableTd data-testid="transaction-description">{description}</TableTd>
         <TableTd>{date}</TableTd>
       </TableTr>
     )
@@ -31,38 +31,6 @@ const TransactionsList = ({ transactions }) => {
     </Table>
   );
 };
-
-const Table = styled.table`
-  width: 100%;
-  border-collapse: collapse;
-`;
-
-const TableHead = styled.thead`
-  background-color: #1995d0;
-  border: 1px solid #dee2e6;
-  color: #fff;
-  text-transform: uppercase;
-`;
-
-const TableTr = styled.tr`
-  border: 1px solid #dee2e6;
-
-  &:nth-child(even) {
-    background-color: #0000000d;
-  }
-`;
-
-const TableTh = styled.th`
-  border: 1px solid #dee2e6;
-  text-align: left;
-  padding: 12px;
-`;
-
-const TableTd = styled.td`
-  border: 1px solid #dee2e6;
-  text-align: left;
-  padding: 12px;
-`;
 
 TransactionsList.propTypes = {
   transactions: PropTypes.arrayOf(

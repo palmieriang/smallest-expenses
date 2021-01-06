@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styled from "styled-components";
+import { Item, Row, Wrapper, WrapperWide } from "./style";
 
 const Header = ({ provider, balance }) => {
   const { account_number, description, sort_code, title } = provider;
@@ -27,25 +27,6 @@ const Header = ({ provider, balance }) => {
     </WrapperWide>
   );
 };
-
-const Item = styled.p`
-  margin-right: 10px;
-`;
-
-const Row = styled.div`
-  display: flex;
-`;
-
-const Wrapper = styled.div`
-  margin: auto;
-  max-width: 1200px;
-  padding: 10px;
-`;
-
-const WrapperWide = styled.div`
-  background-color: #333;
-  color: #fff;
-`;
 
 Header.propTypes = {
   provider: PropTypes.shape({
