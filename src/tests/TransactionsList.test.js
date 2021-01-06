@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import TransactionsList from "../TransactionsList";
+import TransactionsList from "../components/TransactionsList";
 
 const transactions = [
   {
@@ -23,5 +23,8 @@ describe("TransactionsList", () => {
 
     expect(getByText(/vodafone/i)).toBeInTheDocument();
     expect(getByText(/groceries/i)).toBeInTheDocument();
+    expect(getByText(/57.21/)).toBeInTheDocument();
+    expect(getByText(/2018-06-30/)).toBeInTheDocument();
+    expect(getByText(/gbp/i)).toBeInTheDocument();
   });
 });
