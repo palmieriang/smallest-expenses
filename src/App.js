@@ -7,21 +7,21 @@ import TransactionsList from "./components/TransactionsList";
 
 const App = () => {
   const [user, setUser] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    setIsLoading(true);
     fetchExpenses()
       .then((data) => {
         setUser({
           ...data,
           transactions: getSortedExpenses(data.transactions),
         });
-        setIsLoading(false);
       })
       .catch((error) => {
         setError(error.message);
+      })
+      .finally(() => {
         setIsLoading(false);
       });
   }, []);
