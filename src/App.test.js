@@ -1,10 +1,10 @@
 import React from "react";
 import { render, waitFor } from "@testing-library/react";
-import App from "../App";
-import { fetchExpenses } from "../utils/api";
+import App from "./App";
+import { fetchExpenses } from "./utils/api";
 import * as user from "./fixtures/transactions.json";
 
-jest.mock("../utils/api");
+jest.mock("./utils/api");
 
 describe("App", () => {
   beforeEach(() => {

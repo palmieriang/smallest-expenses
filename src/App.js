@@ -46,7 +46,7 @@ const App = () => {
     <>
       <GlobalStyle />
       {user && <Header provider={user.provider} balance={user.balance} />}
-      {user?.transactions?.length > 0 ? (
+      {user.transactions.length > 0 ? (
         <Wrapper>
           <TransactionsList transactions={user.transactions} />
         </Wrapper>

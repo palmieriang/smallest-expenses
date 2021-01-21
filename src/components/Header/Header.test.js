@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import Header from "../components/Header";
-import * as user from "./fixtures/transactions.json";
+import Header from "./index";
+import * as user from "../../fixtures/transactions.json";
 
 describe("Header", () => {
   it("should show account number, description, sort code, title and balance", () => {
